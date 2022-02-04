@@ -23,7 +23,7 @@ namespace DatingApp.Api
         {
             services.AddApplicationServices(_config);
             services.AddControllers();
-            //services.AddCors();
+            services.AddCors();
             services.AddIdentityServices(_config);
 
         }
@@ -36,6 +36,8 @@ namespace DatingApp.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
             app.UseAuthentication();
 

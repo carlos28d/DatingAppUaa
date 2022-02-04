@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace DatingApp.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class UsersController : BaseApiController
     {
         private readonly IUserRepository _userRepository;
